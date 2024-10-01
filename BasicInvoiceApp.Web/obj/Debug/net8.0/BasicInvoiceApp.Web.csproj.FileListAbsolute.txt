@@ -1,0 +1,8 @@
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.csproj.AssemblyReference.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.GeneratedMSBuildEditorConfig.editorconfig
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.AssemblyInfoInputs.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.AssemblyInfo.cs
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.csproj.CoreCompileInputs.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.MvcApplicationPartsAssemblyInfo.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.RazorAssemblyInfo.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Web\obj\Debug\net8.0\BasicInvoiceApp.Web.RazorAssemblyInfo.cs

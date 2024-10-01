@@ -1,0 +1,11 @@
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\bin\Debug\net8.0\BasicInvoiceApp.Domain.deps.json
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\bin\Debug\net8.0\BasicInvoiceApp.Domain.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\bin\Debug\net8.0\BasicInvoiceApp.Domain.pdb
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\BasicInvoiceApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\BasicInvoiceApp.Domain.AssemblyInfoInputs.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\BasicInvoiceApp.Domain.AssemblyInfo.cs
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\BasicInvoiceApp.Domain.csproj.CoreCompileInputs.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\BasicInvoiceApp.Domain.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\refint\BasicInvoiceApp.Domain.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\BasicInvoiceApp.Domain.pdb
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Domain\obj\Debug\net8.0\ref\BasicInvoiceApp.Domain.dll

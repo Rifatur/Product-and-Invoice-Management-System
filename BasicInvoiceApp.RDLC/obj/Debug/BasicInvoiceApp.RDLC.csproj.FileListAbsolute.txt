@@ -1,0 +1,4 @@
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.RDLC\obj\Debug\BasicInvoiceApp.RDLC.csproj.AssemblyReference.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.RDLC\obj\Debug\BasicInvoiceApp.RDLC.Properties.Resources.resources
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.RDLC\obj\Debug\BasicInvoiceApp.RDLC.csproj.GenerateResource.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.RDLC\obj\Debug\BasicInvoiceApp.RDLC.csproj.CoreCompileInputs.cache

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "BasicInvoiceApp.Presentation/1.0.0": {
+        "runtime": {
+          "BasicInvoiceApp.Presentation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BasicInvoiceApp.Presentation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInvoiceApp.Application.csproj.AssemblyReference.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInvoiceApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInvoiceApp.Application.AssemblyInfoInputs.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInvoiceApp.Application.AssemblyInfo.cs
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInvoiceApp.Application.csproj.CoreCompileInputs.cache
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\bin\Debug\net8.0\BasicInvoiceApp.Application.deps.json
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\bin\Debug\net8.0\BasicInvoiceApp.Application.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\bin\Debug\net8.0\BasicInvoiceApp.Application.pdb
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\bin\Debug\net8.0\BasicInvoiceApp.Domain.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\bin\Debug\net8.0\BasicInvoiceApp.Infrastructure.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\bin\Debug\net8.0\BasicInvoiceApp.Domain.pdb
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\bin\Debug\net8.0\BasicInvoiceApp.Infrastructure.pdb
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInv.4D1118F5.Up2Date
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInvoiceApp.Application.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\refint\BasicInvoiceApp.Application.dll
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\BasicInvoiceApp.Application.pdb
+X:\Apps\BasicInvoiceApp\BasicInvoiceApp.Application\obj\Debug\net8.0\ref\BasicInvoiceApp.Application.dll

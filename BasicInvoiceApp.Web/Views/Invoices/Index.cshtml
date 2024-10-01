@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Form with Dynamic Products</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap CDN (optional, for styling) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .table td {
+            padding: 10px;
+        }
+        .table th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create Invoice</h2>
+        <form id="invoiceForm" class="border border-primary p-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input type="date" class="form-control" name="Date" id="Date" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="CustomerId">Customer ID</label>
+                        <input type="text" class="form-control" name="CustomerId" id="CustomerId" placeholder="Customer ID" required />
+                    </div>
+                </div>
+            </div>
+
+
+            <h4>Invoice Items</h4>
+            <table id="invoiceItemsTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="invoice-item-row">
+                        <td>
+                            <select class="form-control productSelect" name="Items[0].ProductId" required>
+                                <option value="">Select a product</option>
+                            </select>
+                        </td>
+                        <td><input type="number" class="form-control quantity" name="Items[0].Quantity" required /></td>
+                        <td><input type="number" class="form-control price" name="Items[0].Price" readonly required /></td>
+                        <td><input type="number" class="form-control total" name="Items[0].Total" readonly required /></td>
+                        <td><button type="button" class="btn btn-danger removeItem">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-primary" id="addItem">Add Item</button>
+            <div class="d-flex justify-content-end">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="totalAmount">Total Amount</label>
+                            <input type="number" class="form-control" name="TotalAmount" id="totalAmount" placeholder="Total Amount" readonly required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <div class="container mt-3">
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">Create Invoice</button>
+                </div>
+            </div>
+        </form>
+        <hr />
+
+        <h2>Invoice List</h2>
+        <table id="invoiceListTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Invoice ID</th>
+                    <th>Customer ID</th>
+                    <th>Date</th>
+                    <th>Total Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Invoice rows will be populated here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal to display invoice details -->
+    <div class="modal fade" id="viewInvoiceModal" tabindex="-1" aria-labelledby="viewInvoiceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewInvoiceModalLabel">Invoice Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Invoice details will be dynamically inserted here -->
+                    <h6>Invoice ID: <span id="invoiceId"></span></h6>
+                    <h6>Customer ID: <span id="customerId"></span></h6>
+                    <h6>Date: <span id="invoiceDate"></span></h6>
+                    <h6>Total Amount: <span id="totalAmountModal"></span></h6>
+
+                    <h6>Invoice Items:</h6>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invoiceItemsTableModal">
+                            <!-- Rows for invoice items will be populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Print</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+        $(document).ready(function () {
+            let itemIndex = 1;
+
+            // Fetch products from the server
+            let products = [];
+            $.ajax({
+                url: 'https://localhost:7235/api/Products', // Your API endpoint
+                method: 'GET',
+                success: function (data) {
+                    products = data;
+                    populateProductDropdown($('.productSelect'));
+                }
+            });
+
+
+            // Populate the product dropdown with the product list
+            function populateProductDropdown(selectElement) {
+                products.forEach(product => {
+                    $(selectElement).append(`<option value="${product.id}" data-price="${product.price}">${product.name}</option>`);
+                });
+            }
+
+            // Add a new row for an invoice item
+            $('#addItem').on('click', function () {
+                let newRow = `
+                    <tr class="invoice-item-row">
+                        <td>
+                            <select class="form-control productSelect" required>
+                                <option value="">Select a product</option>
+                            </select>
+                        </td>
+                        <td><input type="number" class="form-control quantity" required /></td>
+                        <td><input type="number" class="form-control price" readonly required /></td>
+                        <td><input type="number" class="form-control total" readonly required /></td>
+                        <td><button type="button" class="btn btn-danger removeItem">Remove</button></td>
+                    </tr>`;
+                $('#invoiceItemsTable tbody').append(newRow);
+                populateProductDropdown($(`#invoiceItemsTable tbody tr:last-child .productSelect`));
+                itemIndex++;
+            });
+
+            // Remove an item row
+            $(document).on('click', '.removeItem', function () {
+                $(this).closest('tr').remove();
+                calculateInvoiceTotal();
+            });
+
+            // Update price based on selected product
+            $(document).on('change', '.productSelect', function () {
+                let selectedProductPrice = $(this).find(':selected').data('price');
+                let $row = $(this).closest('tr');
+                $row.find('.price').val(selectedProductPrice);
+                updateItemTotal($row);
+            });
+
+            // Calculate the total for each item and update the total amount
+            $(document).on('input', '.quantity', function () {
+                let $row = $(this).closest('tr');
+                updateItemTotal($row);
+            });
+
+            // Update the item total and overall total
+            function updateItemTotal($row) {
+                let quantity = parseFloat($row.find('.quantity').val()) || 0;
+                let price = parseFloat($row.find('.price').val()) || 0;
+                let total = quantity * price;
+                $row.find('.total').val(total.toFixed(2));
+
+                calculateInvoiceTotal();
+            }
+
+            // Calculate the total amount for the invoice
+            function calculateInvoiceTotal() {
+                let totalAmount = 0;
+                $('.total').each(function () {
+                    let itemTotal = parseFloat($(this).val()) || 0;
+                    totalAmount += itemTotal;
+                });
+                $('#totalAmount').val(totalAmount.toFixed(2));
+            }
+
+            // Handle form submission with AJAX
+            $('#invoiceForm').on('submit', function (e) {
+                e.preventDefault();
+
+                let invoice = {
+                    CustomerId: $('input[name="CustomerId"]').val(),
+                    Date: $('input[name="Date"]').val(),
+                    TotalAmount: $('#totalAmount').val(),
+                    Items: []
+                };
+
+                // Loop through each row in the invoice items table to gather product details
+                $('#invoiceItemsTable tbody tr').each(function (index, row) {
+                    let item = {
+                        ProductId: $(row).find('.productSelect').val(),
+                        ProductName: $(row).find('.productSelect option:selected').text(),  // Get the selected product name
+                        Quantity: $(row).find('.quantity').val(),
+                        Price: $(row).find('.price').val(),
+                        Total: $(row).find('.total').val()
+                    };
+                    invoice.Items.push(item);
+                });
+
+                // Send the data via AJAX
+                $.ajax({
+                    url: 'https://localhost:7235/api/Invoices',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(invoice),
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Invoice created with ID: ' + response.invoiceId);
+                            window.location.reload();
+                        } else {
+                          fetchInvoices();  // Refresh the invoice list after submission
+                          window.location.reload();  // Optionally reload the page
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert('Error: ' + textStatus + ' - ' + errorThrown);
+                    }
+                });
+            });
+            // Function to fetch invoices
+            function fetchInvoices() {
+                $.ajax({
+                    url: 'https://localhost:7235/api/Invoices',  // Your API endpoint for getting the list of invoices
+                    method: 'GET',
+                    success: function (data) {
+                        populateInvoiceTable(data);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert('Error fetching invoices: ' + textStatus);
+                    }
+                });
+            }
+
+            // Populate the invoice table with data
+            function populateInvoiceTable(invoices) {
+                let invoiceTableBody = $('#invoiceListTable tbody');
+                invoiceTableBody.empty();  // Clear any existing rows
+
+                invoices.forEach(invoice => {
+                    let row = `
+                        <tr>
+                            <td>${invoice.id}</td>
+                            <td>${invoice.customerId}</td>
+                            <td>${new Date(invoice.date).toLocaleDateString()}</td>
+                            <td>${invoice.totalAmount.toFixed(2)}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary viewInvoice" data-id="${invoice.id}">View</button>
+                                <button class="btn btn-sm btn-danger deleteInvoice" data-id="${invoice.id}">Delete</button>
+                            </td>
+                        </tr>`;
+                    invoiceTableBody.append(row);
+                });
+            }
+
+    // Fetch the invoices when the page loads
+    fetchInvoices();
+    // Function to fetch invoice details when "View" button is clicked
+    $(document).on('click', '.viewInvoice', function () {
+        let invoiceId = $(this).data('id');
+
+        // Make AJAX request to fetch invoice details
+        $.ajax({
+            url: `https://localhost:7235/api/Invoices/${invoiceId}`,  // API endpoint to fetch a single invoice by ID
+            method: 'GET',
+            success: function (invoice) {
+                // Populate the modal with invoice details
+                $('#invoiceId').text(invoice.id);
+                $('#customerId').text(invoice.customerId);
+                $('#invoiceDate').text(new Date(invoice.date).toLocaleDateString());
+                $('#totalAmountModal').text(invoice.totalAmount.toFixed(2));
+
+                // Populate invoice items in the modal
+                let invoiceItemsTableModal = $('#invoiceItemsTableModal');
+                invoiceItemsTableModal.empty();  // Clear any previous items
+                invoice.items.forEach(item => {
+                    let row = `
+                        <tr>
+                            <td>${item.productName}</td>
+                            <td>${item.quantity}</td>
+                            <td>${item.price.toFixed(2)}</td>
+                            <td>${item.total.toFixed(2)}</td>
+                        </tr>`;
+                    invoiceItemsTableModal.append(row);
+                });
+
+                // Show the modal
+                $('#viewInvoiceModal').modal('show');
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error fetching invoice details: ' + textStatus);
+            }
+        });
+    });
+
+        });
+</script>
+</body>
+</html>

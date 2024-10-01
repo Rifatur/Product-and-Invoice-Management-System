@@ -1,0 +1,9 @@
+X:\Apps\BasicInvoiceApp\RDLCReport\bin\Debug\RDLCReport.exe.config
+X:\Apps\BasicInvoiceApp\RDLCReport\bin\Debug\RDLCReport.exe
+X:\Apps\BasicInvoiceApp\RDLCReport\bin\Debug\RDLCReport.pdb
+X:\Apps\BasicInvoiceApp\RDLCReport\obj\Debug\RDLCReport.csproj.AssemblyReference.cache
+X:\Apps\BasicInvoiceApp\RDLCReport\obj\Debug\RDLCReport.Properties.Resources.resources
+X:\Apps\BasicInvoiceApp\RDLCReport\obj\Debug\RDLCReport.csproj.GenerateResource.cache
+X:\Apps\BasicInvoiceApp\RDLCReport\obj\Debug\RDLCReport.csproj.CoreCompileInputs.cache
+X:\Apps\BasicInvoiceApp\RDLCReport\obj\Debug\RDLCReport.exe
+X:\Apps\BasicInvoiceApp\RDLCReport\obj\Debug\RDLCReport.pdb

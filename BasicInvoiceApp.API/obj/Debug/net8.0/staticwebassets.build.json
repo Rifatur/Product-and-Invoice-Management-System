@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Dudc0xBBppNdvwcQQHvMLM0rQ6GthVKSOhjIcTLo12I=",
+  "Source": "BasicInvoiceApp.API",
+  "BasePath": "_content/BasicInvoiceApp.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
