@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2>Create Product</h2>
+        <form id="productForm">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" id="productName" name="Name" placeholder="Enter product name" required>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Price</label>
+                <input type="number" class="form-control" id="productPrice" name="Price" placeholder="Enter product price" required>
+            </div>
+            <div class="form-group">
+                <label for="productStock">Stock</label>
+                <input type="number" class="form-control" id="productStock" name="Stock" placeholder="Enter stock quantity" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Product</button>
+        </form>
+
+        <hr>
+
+        <h2>Product List</h2>
+        <table class="table table-bordered" id="productTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product rows will be populated dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Fetch product list on page load
+            fetchProducts();
+
+            // Handle form submission for creating a new product
+            $('#productForm').on('submit', function (e) {
+                e.preventDefault(); // Prevent form submission
+
+                // Get form data
+                let productData = {
+                    Name: $('#productName').val(),
+                    Price: parseFloat($('#productPrice').val()),
+                    Stock: parseInt($('#productStock').val())
+                };
+
+                // Send AJAX POST request to create a new product
+                $.ajax({
+                    url: 'https://localhost:7235/api/Products',  
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(productData),
+                    success: function (response) {
+                        alert('Product created successfully');
+                        // Clear the form
+                        $('#productForm')[0].reset();
+                        // Fetch updated product list
+                        fetchProducts();
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error creating product: ' + xhr.responseText);
+                    }
+                });
+            });
+
+            // Function to fetch and display the product list
+            function fetchProducts() {
+                $.ajax({
+                    url: 'https://localhost:7235/api/Products', 
+                    method: 'GET',
+                    success: function (products) {
+                        populateProductTable(products);
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error fetching product list: ' + xhr.responseText);
+                    }
+                });
+            }
+
+            // Populate the product table with data
+            function populateProductTable(products) {
+                let productTableBody = $('#productTable tbody');
+                productTableBody.empty();  // Clear existing rows
+
+                products.forEach(product => {
+                    let row = `
+                            <tr>
+                                <td>${product.id}</td>
+                                <td>${product.name}</td>
+                                <td>${product.price.toFixed(2)}</td>
+                                <td>${product.stock}</td>
+                            </tr>`;
+                    productTableBody.append(row);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

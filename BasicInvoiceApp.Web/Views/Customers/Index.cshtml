@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2>Create Customer</h2>
+        <form id="customerForm">
+            <div class="form-group">
+                <label for="customerName">Customer Name</label>
+                <input type="text" class="form-control" id="customerName" name="Name" placeholder="Enter customer name" required>
+            </div>
+            <div class="form-group">
+                <label for="customerAddress">Address</label>
+                <input type="text" class="form-control" id="customerAddress" name="Address" placeholder="Enter address">
+            </div>
+            <button type="submit" class="btn btn-primary">Create Customer</button>
+        </form>
+
+        <hr>
+
+        <h2>Customer List</h2>
+        <table class="table table-bordered" id="customerTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Customer rows will be get dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Fetch customer list on page load
+            fetchCustomers();
+
+            // Handle form submission for creating a new customer
+            $('#customerForm').on('submit', function (e) {
+                e.preventDefault(); 
+
+                // Get form data
+                let customerData = {
+                    Name: $('#customerName').val(),
+                    Address: $('#customerAddress').val()
+                };
+
+                // Send AJAX POST request to create a new customer
+                $.ajax({
+                    url: 'https://localhost:7235/api/Customers', 
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(customerData),
+                    success: function (response) {
+                        alert('Customer created successfully');
+                        // Clear the form
+                        $('#customerForm')[0].reset();
+                        // Fetch updated customer list
+                        fetchCustomers();
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error creating customer: ' + xhr.responseText);
+                    }
+                });
+            });
+
+            // display the customer list
+            function fetchCustomers() {
+                $.ajax({
+                    url: 'https://localhost:7235/api/Customers', 
+                    method: 'GET',
+                    success: function (customers) {
+                        populateCustomerTable(customers);
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error fetching customer list: ' + xhr.responseText);
+                    }
+                });
+            }
+
+            // Populate the customer table with data
+            function populateCustomerTable(customers) {
+                let customerTableBody = $('#customerTable tbody');
+                customerTableBody.empty();  // Clear existing rows
+
+                customers.forEach(customer => {
+                    let row = `
+                        <tr>
+                            <td>${customer.id}</td>
+                            <td>${customer.name}</td>
+                            <td>${customer.address || 'N/A'}</td>
+                        </tr>`;
+                    customerTableBody.append(row);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

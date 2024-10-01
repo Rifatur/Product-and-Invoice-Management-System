@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "X:\\Apps\\BasicInvoiceApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{435890BA-D2DE-48CF-A320-E532CE17A431}|BasicInvoiceApp.Infrastructure\\BasicInvoiceApp.Infrastructure.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.infrastructure\\persistence\\repository\\invoicereportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{435890BA-D2DE-48CF-A320-E532CE17A431}|BasicInvoiceApp.Infrastructure\\BasicInvoiceApp.Infrastructure.csproj|solutionrelative:basicinvoiceapp.infrastructure\\persistence\\repository\\invoicereportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.web\\views\\invoices\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|solutionrelative:basicinvoiceapp.web\\views\\invoices\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.web\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|solutionrelative:basicinvoiceapp.web\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.web\\views\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|solutionrelative:basicinvoiceapp.web\\views\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.web\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|solutionrelative:basicinvoiceapp.web\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.web\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|solutionrelative:basicinvoiceapp.web\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ED32FAC-F04E-4AD8-BECE-95CA99662818}|BasicInvoiceApp.Application\\BasicInvoiceApp.Application.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.application\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ED32FAC-F04E-4AD8-BECE-95CA99662818}|BasicInvoiceApp.Application\\BasicInvoiceApp.Application.csproj|solutionrelative:basicinvoiceapp.application\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ED32FAC-F04E-4AD8-BECE-95CA99662818}|BasicInvoiceApp.Application\\BasicInvoiceApp.Application.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.application\\dtos\\customer\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ED32FAC-F04E-4AD8-BECE-95CA99662818}|BasicInvoiceApp.Application\\BasicInvoiceApp.Application.csproj|solutionrelative:basicinvoiceapp.application\\dtos\\customer\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F15F3AEB-3B49-4744-BF88-9CC88000DE02}|BasicInvoiceApp.API\\BasicInvoiceApp.API.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.api\\reportservice\\reportviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F15F3AEB-3B49-4744-BF88-9CC88000DE02}|BasicInvoiceApp.API\\BasicInvoiceApp.API.csproj|solutionrelative:basicinvoiceapp.api\\reportservice\\reportviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|x:\\apps\\basicinvoiceapp\\basicinvoiceapp.web\\views\\invoices\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{59662C97-7D62-4809-98C6-18D2367F17C1}|BasicInvoiceApp.Web\\BasicInvoiceApp.Web.csproj|solutionrelative:basicinvoiceapp.web\\views\\invoices\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +54,84 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InvoiceReportService.cs",
-              "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Infrastructure\\Persistence\\Repository\\InvoiceReportService.cs",
-              "RelativeDocumentMoniker": "BasicInvoiceApp.Infrastructure\\Persistence\\Repository\\InvoiceReportService.cs",
-              "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Infrastructure\\Persistence\\Repository\\InvoiceReportService.cs",
-              "RelativeToolTip": "BasicInvoiceApp.Infrastructure\\Persistence\\Repository\\InvoiceReportService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T06:27:33.736Z",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Views\\Customers\\Index.cshtml",
+              "RelativeDocumentMoniker": "BasicInvoiceApp.Web\\Views\\Customers\\Index.cshtml",
+              "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Views\\Customers\\Index.cshtml",
+              "RelativeToolTip": "BasicInvoiceApp.Web\\Views\\Customers\\Index.cshtml",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwv2EAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T08:18:10.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "BasicInvoiceApp.Web\\Views\\Products\\Index.cshtml",
+              "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "BasicInvoiceApp.Web\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAE0AAAAAAAAAAADwv1wAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T08:17:04.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "BasicInvoiceApp.Web\\Controllers\\ProductsController.cs",
+              "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "BasicInvoiceApp.Web\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T08:16:56.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "BasicInvoiceApp.Web\\Controllers\\CustomersController.cs",
+              "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "BasicInvoiceApp.Web\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T08:16:52.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Application\\DTOs\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "BasicInvoiceApp.Application\\DTOs\\ProductDTO.cs",
+              "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Application\\DTOs\\ProductDTO.cs",
+              "RelativeToolTip": "BasicInvoiceApp.Application\\DTOs\\ProductDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:33:21.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerDto.cs",
+              "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Application\\DTOs\\customer\\CustomerDto.cs",
+              "RelativeDocumentMoniker": "BasicInvoiceApp.Application\\DTOs\\customer\\CustomerDto.cs",
+              "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Application\\DTOs\\customer\\CustomerDto.cs",
+              "RelativeToolTip": "BasicInvoiceApp.Application\\DTOs\\customer\\CustomerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:32:59.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ReportViewService.cs",
               "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.API\\ReportService\\ReportViewService.cs",
               "RelativeDocumentMoniker": "BasicInvoiceApp.API\\ReportService\\ReportViewService.cs",
@@ -55,19 +139,21 @@
               "RelativeToolTip": "BasicInvoiceApp.API\\ReportService\\ReportViewService.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAiwCIAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T05:31:11.581Z"
+              "WhenOpened": "2024-10-01T05:31:11.581Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Views\\Invoices\\Index.cshtml",
               "RelativeDocumentMoniker": "BasicInvoiceApp.Web\\Views\\Invoices\\Index.cshtml",
               "ToolTip": "X:\\Apps\\BasicInvoiceApp\\BasicInvoiceApp.Web\\Views\\Invoices\\Index.cshtml",
               "RelativeToolTip": "BasicInvoiceApp.Web\\Views\\Invoices\\Index.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAJMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADsBAAAAAAAAAAAAADwBAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T05:12:31.399Z"
+              "WhenOpened": "2024-10-01T05:12:31.399Z",
+              "EditorCaption": ""
             }
           ]
         }

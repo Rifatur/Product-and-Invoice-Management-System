@@ -153,7 +153,7 @@
             // Fetch products from the server
             let products = [];
             $.ajax({
-                url: 'https://localhost:7235/api/Products', // Your API endpoint
+                url: 'https://localhost:7235/api/Products', 
                 method: 'GET',
                 success: function (data) {
                     products = data;
@@ -243,7 +243,7 @@
                 $('#invoiceItemsTable tbody tr').each(function (index, row) {
                     let item = {
                         ProductId: $(row).find('.productSelect').val(),
-                        ProductName: $(row).find('.productSelect option:selected').text(),  // Get the selected product name
+                        ProductName: $(row).find('.productSelect option:selected').text(),  
                         Quantity: $(row).find('.quantity').val(),
                         Price: $(row).find('.price').val(),
                         Total: $(row).find('.total').val()
@@ -274,7 +274,7 @@
             // Function to fetch invoices
             function fetchInvoices() {
                 $.ajax({
-                    url: 'https://localhost:7235/api/Invoices',  // Your API endpoint for getting the list of invoices
+                    url: 'https://localhost:7235/api/Invoices',  
                     method: 'GET',
                     success: function (data) {
                         populateInvoiceTable(data);
@@ -314,7 +314,7 @@
 
         // Make AJAX request to fetch invoice details
         $.ajax({
-            url: `https://localhost:7235/api/Invoices/${invoiceId}`,  // API endpoint to fetch a single invoice by ID
+            url: `https://localhost:7235/api/Invoices/${invoiceId}`,  
             method: 'GET',
             success: function (invoice) {
                 // Populate the modal with invoice details
